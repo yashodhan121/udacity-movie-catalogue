@@ -5,25 +5,18 @@
 	<div class="row banner main">
 			<center><div id="head1"><br>MOVIES CATALOG</div></center>
 	</div>
-	<div class = 'flash'>
-		      {% with messages = get_flashed_messages() %}
-      {% if messages %}
-          
-        <ul>
-        {% for message in messages %}
-            <li> <strong> {{ message }} </strong> </li>
-        {% endfor %}
-        </ul>
-        {% endif %}
-    {% endwith %}
-
-</div>
+	
 		<br>
 		<font style="font-size: 50px; color: #E8F5E9; font-weight: 950;">CATEGORY</font>
 		<br><br>
 		<a href="{{url_for('newGenre')}}"><button id="b1">ADD GENRE</button></a><br>
 	{% for i in Movie%}
-		<div id="item"><a href = "{{url_for('showMovie_type', movietype_id= i.id)}}">{{i.movie_type}}</a></div>
+		<div id="item"><a href = "{{url_for('showMovie_type', movietype_id= i.id)}}">{{i.movie_type}}</a>
+			<a href=""><button style="float:right; margin-top: 8px; width: 80px; height: 40px; background-color: transparent; border-color: transparent; color: #fff; margin-right: 10px;
+				font-size: 20px;">EDIT</button></a>
+			<a href="{{url_for('deleteGenre',  movietype_id= i.id)}}"><button style="float:right; margin-top: 8px; margin-right: 10px; width: 100px; height: 40px; background-color: transparent; border-color: transparent; color: #fff;
+				font-size: 20px;">DELETE</button></a>
+		</div>
 		<br>
 	{% endfor %}
 {% endblock %}

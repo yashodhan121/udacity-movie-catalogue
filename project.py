@@ -46,7 +46,8 @@ def shownewMovies():
 def newGenre():
   if 'username' not in login_session:
       return redirect('/login')
-  if request.method == 'POST':
+
+  elif request.method == 'POST':
       newgenre = Movies(movie_type = request.form['name'],
         user_id=login_session['user_id'])
       session.add(newgenre)
@@ -56,6 +57,36 @@ def newGenre():
   else:
       return render_template('newGenre.html')
 
+
+@app.route('/movies/<int:movietype_id>/delete/', methods=['GET', 'POST'])
+def deleteGenre(movietype_id):
+    GenreToDelete = session.query(
+        Movies).filter_by(id=movietype_id).one()
+    if 'username' not in login_session:
+        return redirect('/login')
+    if GenreToDelete.user_id != login_session['user_id']:
+        return "<script>function myFunction() {alert('You are not authorized to delete this Genre. Please create your own Genre in order to delete.');}</script><body onload='myFunction()'>"
+    if request.method == 'POST':
+        session.delete(GenreToDelete)
+        session.commit()
+        return redirect(url_for('shownewMovies', movietype_id=movietype_id))
+    else:
+        return render_template('deletegenre.html', movie=GenreToDelete)
+
+@app.route('/movies/<int:movietype_id>/edit/', methods=['GET', 'POST'])
+def editGenre(movietype_id):
+    editedGenre = session.query(
+        Genre).filter_by(id=movietype_id).one()
+    if 'username' not in login_session:
+        return redirect('/login')
+    if editedGenre.user_id != login_session['user_id']:
+        return "<script>function myFunction() {alert('You are not authorized to edit this Genre. Please create your own Genre in order to edit.');}</script><body onload='myFunction()'>"
+    if request.method == 'POST':
+        if request.form['name']:
+            editedGenre.name = request.form['name']
+            return redirect(url_for('shownewMovies'))
+    else:
+        return render_template('editGenre.html', Genre=editedGenre)
 
 
 

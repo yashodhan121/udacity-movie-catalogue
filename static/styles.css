@@ -78,10 +78,10 @@ a
 }
 button
 {
-	box-shadow: 10px 10px 10px 10px #fff;
+	box-shadow: none;
 }
 button:hover
 {
-	box-shadow: none;
-	transition: 3s;
+	box-shadow: 4px 4px 4px 4px #000;
+	transition: 2s;
 }

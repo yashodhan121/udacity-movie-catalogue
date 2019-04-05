@@ -1,0 +1,16 @@
+{% extends "main.html" %}
+{% block content %}
+			<div class="row banner main">
+			<center><div id="head1"><br>DELETE GENRE</div></center>
+	</div>
+	<center>
+<form action="#" method = 'post'>
+	<font style="font-size: 40px; color: #fff;">Are you sure you want to delete Genre : {{movie.movie_type}}</font>
+	<br><br>
+	<button style="width:190px; height: 40px; font-size: 30px; background-color: #000; color: #fff;"type="submit" id="submit" type="submit">Delete</button>
+	&nbsp;&nbsp;&nbsp;<a href = "{{url_for('shownewMovies')}}">
+		<button style="width:190px; height: 40px; font-size: 30px; background-color: #000; color: #fff;">Cancel</button>
+	</a>
+</form>
+</center>
+{% endblock %}
