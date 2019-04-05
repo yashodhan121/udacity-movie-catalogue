@@ -1,0 +1,15 @@
+{% extends "main.html" %}
+{% block content %}
+	<a href="{{url_for('showLogin')}}"><button style="width: 300px; height: 50px; background-color: transparent; border-color: transparent; color: #fff;
+	font-size: 30px;">Click here to Login</button></a>
+	<div class="row banner main">
+			<center><div id="head1">MOVIES CATALOG</div></center>
+	</div>
+		<br>
+		<font style="font-size: 50px; color: #E8F5E9; font-weight: 950;">CATEGORY</font>
+		<br><br>
+	{% for i in Movie%}
+		<div id="item"><a href = "{{url_for('showMovie_type', movietype_id= i.id)}}">{{i.movie_type}}</a></div>
+		<br>
+	{% endfor %}
+{% endblock %}

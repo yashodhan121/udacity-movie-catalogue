@@ -1,0 +1,17 @@
+{% extends "main.html" %}
+{% block content %}
+	<div class="row banner main">
+			<center><div id="head1"><br><br>{{tmovietype.movie_type}}</div></center>
+	</div>
+		<br><br>
+		{% for j in Movieitem %}
+		<div id="conta">
+			<div id="text">
+				<p><font style="font-size:30px;">&nbsp;{{j.name}}</font></p>
+				<p><font style="font-size: 25px;">&nbsp;Description: &nbsp; &nbsp;</font><font style="font-size: 18px;">{{j.description}}</font></p>
+				<p><font style="font-size: 25px;">&nbsp;Producer: &nbsp; &nbsp;</font><font style="font-size: 18px;">{{j.producer}}</font></p>
+				<p><font style="font-size: 25px;">&nbsp;Starring: &nbsp; &nbsp;</font><font style="font-size: 18px;">{{j.starring}}</font></p>
+			</div>
+		</div>
+		{% endfor %}
+{% endblock %}

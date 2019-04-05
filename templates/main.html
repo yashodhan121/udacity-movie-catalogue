@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<link rel=stylesheet type=text/css href="{{ url_for('static', filename='styles.css') }}">
+		<script>
+  function start() {
+    gapi.load('auth2', function() {
+      auth2 = gapi.auth2.init({
+        client_id: '946548659652-d8rjojarblkl2kj2mt1p2efmplbldphf.apps.googleusercontent.com'
+      });
+    });
+  }
+</script
+	</head>
+	<body>
+		<div class="container">
+			{% block content %}
+			{% endblock %}
+		</div>
+	</body>
+</html>
