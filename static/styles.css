@@ -39,7 +39,9 @@ body
 }
 #item:hover
 {
-	opacity: 0.5;
+	opacity: 0.8;
+	transform: scale(1.1);
+	margin-left: 60px;
 }
 a
 {
@@ -82,6 +84,17 @@ button
 }
 button:hover
 {
+	transform: scale(1.1);
 	box-shadow: 4px 4px 4px 4px #000;
-	transition: 2s;
+	transition: 0.5s;
+}
+input
+{
+
+}
+input:hover
+{
+	transform: scale(1.1);
+	box-shadow: 4px 4px 4px 4px #000;
+	transition: 0.5s;
 }

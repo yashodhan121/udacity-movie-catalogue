@@ -25,16 +25,14 @@ class Movies(Base):
 
     @property
     def serialize(self):
-        return 
-        {
+        return{
             'movie_type': self.movie_type,
-            'id': self.id,
+            'id': self.id
         }
 
 
 class Movie_item(Base):
     __tablename__ = 'movie_item'
-
     name = Column(String(80), nullable=False)
     id = Column(Integer, primary_key=True)
     description = Column(String(250))
@@ -47,13 +45,12 @@ class Movie_item(Base):
 
     @property
     def serialize(self):
-        return 
-        {
+        return{
             'name': self.name,
             'description': self.description,
             'id': self.id,
             'producer': self.producer,
-            'starring': self.starring,
+            'starring': self.starring
         }
 
 

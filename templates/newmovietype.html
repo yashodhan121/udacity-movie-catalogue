@@ -4,6 +4,8 @@
 			<center><div id="head1"><br><br>{{tmovietype.movie_type}}</div></center>
 	</div>
 		<br><br>
+		<button><a href="{{url_for('addnewMovie',movietype_id=tmovietype.id)}}"><button id="b1">ADD MOVIE</button></a><br>
+		<br><br>
 		{% for j in Movieitem %}
 		<div id="conta">
 			<div id="text">
@@ -11,6 +13,9 @@
 				<p><font style="font-size: 25px;">&nbsp;Description: &nbsp; &nbsp;</font><font style="font-size: 18px;">{{j.description}}</font></p>
 				<p><font style="font-size: 25px;">&nbsp;Producer: &nbsp; &nbsp;</font><font style="font-size: 18px;">{{j.producer}}</font></p>
 				<p><font style="font-size: 25px;">&nbsp;Starring: &nbsp; &nbsp;</font><font style="font-size: 18px;">{{j.starring}}</font></p>
+				<a href="{{url_for('editMov',  movietype_id= tmovietype.id , mov_id = j.id)}}"><button style="float:left; background-color: #333; width: 80px; height: 40px; border-color: transparent; color: #fff; margin-left: 10px;font-size: 20px;">EDIT</button></a>
+			<a href="{{url_for('deleteMov',  movietype_id= tmovietype.id , mov_id = j.id)}}"><button style="float:left; background-color: #333; margin-left: 10px; width: 100px; height: 40px; border-color: transparent; color: #fff;
+				font-size: 20px;">DELETE</button></a>
 				<br><br>
 			</div>
 		</div>

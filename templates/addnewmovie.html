@@ -1,0 +1,23 @@
+{% extends "main.html" %}
+{% block content %}
+			<div class="row banner main">
+			<center><div id="head1"><br>ADD MOVIE IN {{tmovietype.movie_type}}</div></center>
+	</div>
+	<center>
+<form action="#" method = 'post'>
+	<br><br>
+	<input style="width: 730px; height: 40px; border-radius: 5px; color: #000; font-size: 30px;" type ="text" maxlength="100" name="name" placeholder="Movie Name">
+	<br><br>
+	<textarea style="border-radius: 5px; color: #000; font-size: 30px;" type ="text" rows="5" cols="40" name="description" placeholder="Type Description Here ..."></textarea>
+	<br><br>
+	<input style="width: 730px; height: 40px; border-radius: 5px; color: #000; font-size: 30px;" type ="text" maxlength="100" name="producer" placeholder="Producer Name">
+	<br><br>
+	<input style="width: 730px; height: 40px; border-radius: 5px; color: #000; font-size: 30px;" type ="text" maxlength="100" name="starring" placeholder="Starring">
+	<br><br>
+	<button style="width:190px; height: 40px; font-size: 30px; background-color: #000; color: #fff;"type="submit" id="submit" type="submit">ADD</button>
+	&nbsp;&nbsp;&nbsp;<a href = "{{url_for('shownewMovie_type',movietype_id=tmovietype.id)}}">
+		<input type="button" style="width:190px; height: 40px; font-size: 30px; background-color: #000; color: #fff;" value="Cancel"></input>
+	</a>
+</form>
+</center>
+{% endblock %}

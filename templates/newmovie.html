@@ -11,8 +11,8 @@
 		<br><br>
 		<a href="{{url_for('newGenre')}}"><button id="b1">ADD GENRE</button></a><br>
 	{% for i in Movie%}
-		<div id="item"><a href = "{{url_for('showMovie_type', movietype_id= i.id)}}">{{i.movie_type}}</a>
-			<a href=""><button style="float:right; margin-top: 8px; width: 80px; height: 40px; background-color: transparent; border-color: transparent; color: #fff; margin-right: 10px;
+		<div id="item"><a href = "{{url_for('shownewMovie_type', movietype_id= i.id)}}">{{i.movie_type}}</a>
+			<a href="{{url_for('editGenre',  movietype_id= i.id)}}"><button style="float:right; margin-top: 8px; width: 80px; height: 40px; background-color: transparent; border-color: transparent; color: #fff; margin-right: 10px;
 				font-size: 20px;">EDIT</button></a>
 			<a href="{{url_for('deleteGenre',  movietype_id= i.id)}}"><button style="float:right; margin-top: 8px; margin-right: 10px; width: 100px; height: 40px; background-color: transparent; border-color: transparent; color: #fff;
 				font-size: 20px;">DELETE</button></a>
